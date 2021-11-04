@@ -1,0 +1,296 @@
+/* 공통 속성 START */
+/* 속성죽이기 */
+* {
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse; /*border 선이 붙어져있다.*/
+    margin: 0px;
+    padding: 0px;
+    color:black;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/* h1 폰트사이즈를 48px로 공통 속성 잡기 */
+h1 {
+    font-size: 48px;
+    font-weight: lighter;
+}
+.contents {
+    font-size: 20px;
+    font-weight: lighter;
+}
+.contents1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.contents2 {
+    font-size: 24px;
+}
+.contents_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
+.contents3,
+.contents4,
+.contents5 {
+    font-size: 15px;
+}
+/* intro START */
+.intro_bg {
+    background-image: url("image/sea.jpg");
+    width: 100%;
+    height: 718px;
+}
+.header {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    /* background-color: blue; */
+    height: 86px;
+}
+.search_area {
+    width: 300px;
+    height: 40px;
+    background-color: rgb(0,0,0,0.5); /* 반쯤 투명도 */
+    border-radius: 5px;
+    margin-top: 24px;
+}
+.search_area > form > input {
+    border: none;
+    width: 250px;
+    height: 40px;
+    background-color: rgb(0,0,0,0.0); /*배경색과 똑같은데 투명을 입힌는 방법이다.*/
+    color: white;
+    padding-left: 10px;
+}
+.search_area > form > span {
+    width: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; /*마우스를 올리면 버튼 클릭하는 것처럼 표현이 된다.*/
+}
+.nav { 
+    display: flex;
+    justify-content: flex-end; /* 글들 끝에 붙여주는 역할 display: flex 같이 해줘야한다. */
+    width: calc(1280px - 300px);
+    /* background-color: chartreuse; */
+    line-height: 86px; /* headr의 높이와 맞춰주면 가운데로 글자의 높이가 맞춰진다. */
+}
+.nav > li {
+    margin-left: 84px;
+    color: violet;
+}
+.nav > li > a {
+    color: white;
+}
+.intro_text {
+    width: 100%;
+    margin: 231px auto 231px auto; /*위 오른쪽 아래 왼쪽*/
+    /* background-color: chartreuse; */
+    text-align:center;
+}
+.intro_text > h1,
+.intro_text > h4 {
+    color: white;
+}
+/* amount START */
+.amount {
+    position: relative;
+    top: -66px;
+    width: 1280px;
+    background-color: white;
+    display: flex; /*4개로 나누기*/
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /*좌측크기 하단크기 흐려지는그림자크기 
+    좌측크기에 -5px 하게 되면 우측으로 옮겨진다.*/
+}
+.amount > li {
+    flex: 1;
+    /* background-color:darkgoldenrod; */
+    width: 320px;
+    height: 132px;
+}
+.amount > li > div {
+    text-align: center;
+    /* background-color: darkkhaki; */
+    height: 57px;
+    margin-top: 37px;
+}
+/*마지막에 있는 요소만 제외한다. *css not selector 검색  */
+/*amount에 있는 li의 마지막 요소에 있는 div 속성값을 줘야하기 때문에 이렇게 작성해야 한다.
+.amount > li:not > div(:last-child) => X */
+.amount > li:not(:last-child) > div{
+    border-right: 1px solid #E1E1E1;
+}
+/* main_text0 START */
+.main_text0 {
+    width: 100%;
+    height: 601px;
+    margin-top: -132px;
+    background-color: #f1f2f3;
+}
+.main_text0 > h1 {
+    padding-top: 116px;
+    text-align: center;
+    /* background-color: greenyellow; */
+}
+.main_text0 > .contents1 {
+    /* background-color: hotpink; */
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+}
+.icons {
+    display: flex;
+    width: 1280px;
+    /* background-color: hotpink; */
+    margin: auto;
+}
+.icons > li {
+    flex: 1;
+    height: 302px;
+    background-color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+.icons > li:not(:last-child) {
+    margin-right: 20px;
+}
+.icons > li > .icon_img {
+    margin: 32px auto 7px auto;
+}
+/*icons 클래스 안에 있는 contents1 이름을 가지고 있는 애들 모조리 
+순서 상관없이 적용하겠다. */
+.icons .contents3 {
+    width: 190px;
+    /* background-color: tomato; */
+    margin: auto;
+    letter-spacing: -1px; /*글자간격 줄이기*/
+}
+.icons .contents4 {
+    width: 220px;
+    /* background-color: tomato; */
+    margin: auto;
+    letter-spacing: -1px; /*글자간격 줄이기*/
+}
+.icons .contents5 {
+    width: 250px;
+    /* background-color: tomato; */
+    margin: auto;
+    letter-spacing: -1px; /*글자간격 줄이기*/
+}
+.more_button {
+    width: 100px;
+    height: 30px;
+    background-color:#0077ff;
+    color: white;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 15px auto 15px auto;
+    cursor: pointer;
+
+}
+/* main_text1 START */
+.main_text1 {
+    width: 100%;
+    height: 659px;
+    /* background-color: brown; */
+}
+.main_text1 > h1 {
+    text-align: center;
+    margin-top: 50px;
+    
+}
+.main_text1 > .contents1 {
+    text-align: center;
+    font-weight: lighter;
+
+}
+.service {
+    width: 1280px;
+    height: 500px;
+    display: flex;
+    margin: 30px auto 30px auto;
+    /* background-color: cyan; */
+}
+.service > .contents3 {
+    padding: 20px;
+    /* margin-left: 20px; */
+    font-size: 16px; /* 위에 contents3 class로 공통속성 사용하려고 했는데 너무 작아서 추가적으로 사이즈 조절해준 것이다. */
+}
+.service h2 {
+    margin-bottom: 27px;
+}
+/* main_text2 START */
+.main_text2 {
+    width: 100%;
+    height: 418px;
+    background-color: darkkhaki;
+    margin-top: 50px;
+}
+.one_two_photo {
+    width: auto;
+    height: 418px;
+    margin: auto;
+    background-color: darkolivegreen;
+    display: flex;
+}
+.one_two_photo > .contact1 {
+    flex: 1;
+    width: 951px;
+    /* width : 100%; */
+    height: 418px;
+    margin: auto;
+    background: url("image/one.jpg") no-repeat;
+    opacity: 0.95;
+}
+.one_two_photo > .contact2 {
+    width: 952px;
+    height: 418px;
+    background: url("image/two.jpg") no-repeat;
+}
+.contact_text > h1,
+.contact_text > div {
+    text-align: center;
+    /* background-color: blueviolet; */
+    color:black;
+    font-weight: bold;
+
+}
+.contact1 > .contact_text {
+margin: 140px auto 30px auto;
+
+}
+.contact_text > .contact_btn {
+    width: 180px;
+    line-height: -10px;
+    margin: 15px auto 50px auto;
+    border : 2px solid white;
+    color: white;
+    font-weight: lighter;
+    cursor: pointer;
+    background-color: rgb(0,0,0,0.2);
+}
+.contact_btn:hover {
+    background-color:rgb(0,0,0,0.5);
+}
+/* under START */
+.under {
+    width: auto;
+    height: 150px;
+    background-color: black;
+    display: flex;
+    padding: 20px;
+}    
+.logo{
+    width: 300px;
+    height: 150px;
+    /* background-color: whitesmoke; */
+    margin-left: 80px;
+}
+.logo > img {
+    margin-left: 80px;
+}
+.under > .contents3 {
+    color: white;
+}
